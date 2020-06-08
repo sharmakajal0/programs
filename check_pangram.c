@@ -39,7 +39,7 @@ int main(){
 	
 //	printArray(frequency, MAX_CHARS);
 
-	for(int j=0;j<MAX_CHARS;j++){
+	for(int j=97;j<=122;j++){
 		if(frequency[j] > 0){
 			count++;
 		}
@@ -49,7 +49,7 @@ int main(){
 
 	printf("Count = %d\n", count);
 	
-	if(count == 26 || count == 27){
+	if(count == 26){
 		printf("The given string is pangram\n");
 	} else {
 		printf("The given string is not a pangram\n");
