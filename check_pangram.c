@@ -47,7 +47,7 @@ int main(){
 	//Removing the whitespace character
 //	count = count - 1;
 
-	printf("Count = %d\n", count);
+	// printf("Count = %d\n", count);
 	
 	if(count == 26){
 		printf("The given string is pangram\n");
