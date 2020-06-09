@@ -1,16 +1,14 @@
 #include<stdio.h>
-#include<string.h>
-#include<ctype.h>
 
-#define MAX_SIZE 200
-#define MAX_CHARS 255
+#define MAX_SIZE 100
+#define MAX_CHARS 91
 
 void inputString(char *str){
 	scanf("%[^\n]%c", str);
 }
 
-void printArray(int arr[], int n){
-	for(int i = 0;i<n;i++){
+void printArray(int arr[]){
+	for(int i = 65;i<=90;i++){
 		printf("%d ", arr[i]);
 	}
 	printf("\n");
@@ -29,17 +27,19 @@ int main(){
 		frequency[i] = 0;
 	}
 	i=0;
-	char c;
+
 	while(test_str[i] != '\0'){
-		c = tolower(test_str[i]);
-		ascii = (int)c;
+		if(test_str[i] >= 'a' && test_str[i] <= 'z'){
+			test_str[i] = test_str[i] - 32;
+		}
+		ascii = test_str[i];
 		frequency[ascii] += 1;
 		i++;
 	}
 	
-//	printArray(frequency, MAX_CHARS);
+	printArray(frequency);
 
-	for(int j=97;j<=122;j++){
+	for(int j=65;j<=90;j++){
 		if(frequency[j] > 0){
 			count++;
 		}
@@ -47,7 +47,7 @@ int main(){
 	//Removing the whitespace character
 //	count = count - 1;
 
-	// printf("Count = %d\n", count);
+	printf("Count = %d\n", count);
 	
 	if(count == 26){
 		printf("The given string is pangram\n");
