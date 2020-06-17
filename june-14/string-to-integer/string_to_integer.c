@@ -17,9 +17,9 @@ void printString(char *s){
 int string_to_int(char s[]){
     unsigned long int result = 0;
     int i = 0;
-    while(s[i] != '\0'){
-        result = result * 10 + s[i] - '0';
-        i++;
+    while(*s){
+        result = result * 10 + *s - '0';
+        s++;
     }
 
     return result;
