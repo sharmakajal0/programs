@@ -44,18 +44,14 @@ int main(){
     scanf("%d", &T);
     printf("T : %d\n", T);
     // while(T != 0){
-    int i = 0;
-    char string[100][MAX];
-    for(int i=0;i<T;i++){
-        scanf("%[^\n]%*c", *string[i]);
-    }
 
     for(int i=0;i<T;i++){
-        printString(*string[i]);
-        int length = size(*string[i]);
+        char string[MAX];
+        scanf("%*c%[^\n]", string);
+        int length = size(string);
 
-        reverse_string(*string[i], length);
-        printString(*string[i]);
+        reverse_string(string, length);
+        printString(string);
     }
     
     return 0;
