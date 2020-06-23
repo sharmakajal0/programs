@@ -26,10 +26,10 @@ int size(char *s){
 
 void reverse_words(char *s, int size){
     int i=0;
-    int temp;
-    char temp_var;
     int start = 0, end = 0;
     while(s[i] != '\0'){
+        int temp;
+        char temp_var;
         if(s[i] != ' '){
             end++;
         }
@@ -70,12 +70,34 @@ int main(){
 
     inputString(test_string);
     int length = size(test_string);
-    printString(test_string);
-    reverse_words(test_string, length);
-    
-    reverse_string(test_string, length);
-    
-    printString(test_string);
+    // printf("Length: %d\n", length);
+    if(length == 0){
+        printf("The given string is empty.\n");
+    }
+    else {
+        if(test_string[length-1] == '.'){
+            // printf("Length: %d\n", length);
+            printf("String before reversing of words: ");
+            printString(test_string);
+            
+            reverse_words(test_string, length - 1);
+            reverse_string(test_string, length - 1);
+            
+            printf("String after reversing of words: ");
+            printString(test_string);
+        }
+        else{
+            // printf("Length: %d\n", length);
+            printf("String before reversing of words: ");
+            printString(test_string);
+            
+            reverse_words(test_string, length);
+            reverse_string(test_string, length);
+            
+            printf("String after reversing of words: ");
+            printString(test_string);
+        }
+    }
 
     return 0;
 }
