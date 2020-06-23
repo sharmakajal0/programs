@@ -1,9 +1,10 @@
 #include<stdio.h>
+#include<string.h>
 
 #define MAX 1000
 
 void inputString(char *s){
-    scanf("%[^\n]%*c", s);
+    gets(s);
 }
 
 int size(char *s){
@@ -42,16 +43,15 @@ void reverse_string(char *s, int size){
 int main(){
     int T;
     scanf("%d", &T);
-    printf("T : %d\n", T);
     // while(T != 0){
+    char string[20][20];
 
     for(int i=0;i<T;i++){
-        char string[MAX];
-        scanf("%*c%[^\n]", string);
-        int length = size(string);
+        gets(string[i]);
+        int length = size(string[i]);
 
-        reverse_string(string, length);
-        printString(string);
+        reverse_string(string[i], length);
+        puts(string[i]);
     }
     
     return 0;
