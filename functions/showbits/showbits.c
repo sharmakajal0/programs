@@ -3,7 +3,7 @@
 void showBits(unsigned int x){
     int k;
     int leftshift;
-    for(int i=15;i>=0;i--){
+    for(int i=7;i>=0;i--){
         leftshift = 1<<i;
         k = x & leftshift;
         if(k==0){
@@ -16,13 +16,11 @@ void showBits(unsigned int x){
 }
 
 int main(){
-    unsigned int j = 0;
+    unsigned int j;
+    printf("Enter the number for which binary value is to be obtained: ");
+    scanf("%d", &j);
     // printf("Main Function:\n");
-    for(;j<=20;j++){
-        // printf("Inside for loop\n");
-        printf("The binary value of integer %d is: ", j);
-        showBits(j);
-    }
+    showBits(j);
 
 
     return 0;
