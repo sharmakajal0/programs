@@ -1,5 +1,6 @@
 // A Java program to demonstrate that both super class 
 // and subclass constructors refer to same object 
+package inheritance.fruits;
 
 // super class 
 class Fruit 
